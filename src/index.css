@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 220 10% 92%;
+
+    --card: 220 15% 11%;
+    --card-foreground: 220 10% 92%;
+
+    --popover: 220 15% 11%;
+    --popover-foreground: 220 10% 92%;
+
+    --primary: 24 85% 55%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 220 12% 16%;
+    --secondary-foreground: 220 10% 85%;
+
+    --muted: 220 12% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 16 75% 50%;
+    --accent-foreground: 220 10% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 220 10% 95%;
+
+    --border: 220 12% 20%;
+    --input: 220 12% 20%;
+    --ring: 24 85% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom colors for the portfolio */
+    --glow-orange: 24 90% 50%;
+    --glow-red: 10 70% 45%;
+    --code-bg: 220 15% 6%;
+    --code-border: 220 12% 18%;
+    --terminal-green: 142 70% 45%;
+    --terminal-text: 220 10% 70%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(24 85% 55%), hsl(10 70% 50%));
+    --gradient-glow: radial-gradient(circle at center, hsl(24 85% 55% / 0.15), transparent 70%);
+    --gradient-card: linear-gradient(145deg, hsl(220 15% 13%), hsl(220 15% 9%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px -10px hsl(24 85% 55% / 0.4);
+    --shadow-card: 0 10px 40px -15px hsl(0 0% 0% / 0.5);
+    --shadow-button: 0 4px 20px -5px hsl(24 85% 55% / 0.5);
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 220 10% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px hsl(24 85% 55% / 0.5);
+  }
+
+  .card-glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .card-glow::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: var(--gradient-glow);
+  }
+
+  .card-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  .code-block {
+    @apply font-mono text-sm p-4 rounded-lg border;
+    background: hsl(var(--code-bg));
+    border-color: hsl(var(--code-border));
+  }
+
+  .terminal-cursor {
+    @apply inline-block w-2 h-5 bg-primary ml-1;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden;
+    box-shadow: var(--shadow-button);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 6px 30px -5px hsl(24 85% 55% / 0.6);
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Syntax highlighting colors */
+  .syntax-keyword { color: hsl(340 80% 65%); }
+  .syntax-string { color: hsl(80 60% 55%); }
+  .syntax-function { color: hsl(200 80% 65%); }
+  .syntax-variable { color: hsl(220 10% 85%); }
+  .syntax-comment { color: hsl(220 10% 45%); font-style: italic; }
+  .syntax-number { color: hsl(30 80% 60%); }
+  .syntax-bracket { color: hsl(50 70% 55%); }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
