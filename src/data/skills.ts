@@ -40,9 +40,9 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Node.js", level: 92 },
       { name: "Django", level: 88 },
-      { name: "Express JS", level: 75 },
       // { name: "GraphQL", level: 82 },
       { name: "REST APIs", level: 95 },
+      { name: "Next JS", level: 55 },
       // { name: "Rust", level: 60 },
     ]
   },
