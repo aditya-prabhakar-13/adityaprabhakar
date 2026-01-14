@@ -19,7 +19,7 @@ const About = () => {
     // { type: "array-item", content: '    "Clean Architecture",' },
     { type: "array-item", content: '    "Competitive Programming"' },
     { type: "array-end", content: "  ]," },
-    { type: "property", key: "  passions:", value: ' ["Frontend Development", "Teaching", "Innovation", "Badminton"],' },
+    { type: "property", key: "  passions:", value: ' ["Frontend Development", "Teaching", "Innovation", "Badminton", "Gym Workout"],' },
     { type: "property", key: "  coffeePerDay:", value: " 2," },
     { type: "property", key: "  greenTeaPerDay:", value: " 2," },
     { type: "property", key: "  available:", value: " true" },
@@ -146,8 +146,8 @@ const About = () => {
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-4 pt-4">
                 {[
-                  { value: "1", label: "Intern(s)" },
-                  { value: "10+", label: "Projects" },
+                  { value: "15+", label: "Projects" },
+                  { value: "700+", label: "Github Commits" },
                   { value: "1000+", label: "CF Rating" },
                 ].map((stat, index) => (
                   <motion.div
