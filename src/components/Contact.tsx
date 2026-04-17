@@ -56,8 +56,8 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: Github, href: "https://github.com/aditya-prabhakar-13", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/aditya-prabhakar-b3452433b", label: "LinkedIn" },
+    { icon: Instagram, href: "https://instagram.com/a_prabhakar_", label: "Instagram" },
     { icon: Mail, href: "mailto:prabhakar130405@gmail.com", label: "Email" },
   ];
 
@@ -232,7 +232,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs font-mono text-muted-foreground">Location</p>
-                  <p className="text-foreground">Guwahati, India</p>
+                  <p className="text-foreground">Indian Institute of Technology Guwahati</p>
                 </div>
               </div>
             </div>
