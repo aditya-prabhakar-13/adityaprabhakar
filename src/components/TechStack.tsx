@@ -104,7 +104,7 @@ const TechStack = () => {
             {"// Also experienced with"}
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {[ "VS Code", "Figma", "Notion", "Vercel", "Github Pages"].map((tool, index) => (
+            {[ "VS Code", "Figma", "Notion", "Vercel", "Github Pages", "Android Studio (Capacitor)"].map((tool, index) => (
               <motion.span
                 key={tool}
                 initial={{ opacity: 0, scale: 0.8 }}

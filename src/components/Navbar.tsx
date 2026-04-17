@@ -112,14 +112,15 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <motion.a
-                href="#contact"
+                href="/Resume.pdf"
+                target="_blank"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
                 onClick={() => setIsOpen(false)}
                 className="block mt-4 py-3 text-center text-sm font-medium border border-primary text-primary rounded-md hover:bg-primary/10 transition-all"
               >
-                Let's Talk
+                View my CV
               </motion.a>
             </div>
           </motion.div>

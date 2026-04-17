@@ -24,7 +24,7 @@ const Footer = () => {
               <span className="text-primary">{"<"}</span>
               Built with
               <Heart className="inline w-4 h-4 mx-1 text-primary" />
-              and lots of coffee
+              , passion and lots of coffee
               <span className="text-primary">{" />"}</span>
             </p>
           </div>

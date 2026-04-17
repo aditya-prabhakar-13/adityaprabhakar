@@ -154,16 +154,31 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
               </div>
 
               {/* Links */}
-              <div className="flex gap-4 pt-4">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-muted hover:bg-muted/80 rounded-lg transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  View Code
-                </a>
+              <div className="flex flex-wrap gap-4 pt-4">
+                {project.githubLinks ? (
+                  project.githubLinks.map((link, idx) => (
+                    <a
+                      key={idx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-muted hover:bg-muted/80 rounded-lg transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      {link.label}
+                    </a>
+                  ))
+                ) : (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-muted hover:bg-muted/80 rounded-lg transition-colors"
+                  >
+                    <Github className="w-4 h-4" />
+                    View Code
+                  </a>
+                )}
                 <a
                   href={project.liveUrl}
                   target="_blank"
