@@ -112,7 +112,7 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <motion.a
-                href="/Resume.pdf"
+                href="/AdityaPrabhakar2026.pdf"
                 target="_blank"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
