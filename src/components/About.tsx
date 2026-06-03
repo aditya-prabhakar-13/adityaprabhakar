@@ -19,9 +19,9 @@ const About = () => {
     // { type: "array-item", content: '    "Clean Architecture",' },
     { type: "array-item", content: '    "Competitive Programming"' },
     { type: "array-end", content: "  ]," },
-    { type: "property", key: "  passions:", value: ' ["Frontend Development", "Teaching", "Innovation", "Badminton", "Gym Workout"],' },
+    { type: "property", key: "  passions:", value: ' ["Full Stack Development", "Gym Workout", "Teaching", "Innovation", "Badminton"],' },
     { type: "property", key: "  coffeePerDay:", value: " 2," },
-    { type: "property", key: "  greenTeaPerDay:", value: " 2," },
+    { type: "property", key: "  greenTeaPerDay:", value: " 1," },
     { type: "property", key: "  available:", value: " true" },
     { type: "close", content: "};" },
   ];
@@ -148,7 +148,7 @@ const About = () => {
                 {[
                   { value: "15+", label: "Projects" },
                   { value: "700+", label: "Github Commits" },
-                  { value: "1000+", label: "CF Rating" },
+                  { value: "1500+", label: "CF Rating" },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}

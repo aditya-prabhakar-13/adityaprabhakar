@@ -58,7 +58,7 @@ const Contact = () => {
     { icon: Github, href: "https://github.com/aditya-prabhakar-13", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/aditya-prabhakar-b3452433b", label: "LinkedIn" },
     { icon: Instagram, href: "https://instagram.com/a_prabhakar_", label: "Instagram" },
-    { icon: Mail, href: "mailto:prabhakar130405@gmail.com", label: "Email" },
+    { icon: Mail, href: "mailto:heyadityaprabhakar@gmail.com", label: "Email" },
   ];
 
   return (
@@ -221,7 +221,7 @@ const Contact = () => {
                 <div>
                   <p className="text-xs font-mono text-muted-foreground">Email</p>
                   <a href="mailto:prabhakar130405@gmail.com" className="text-foreground hover:text-primary transition-colors">
-                    prabhakar130405@gmail.com
+                    heyadityaprabhakar@gmail.com
                   </a>
                 </div>
               </div>
@@ -232,7 +232,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs font-mono text-muted-foreground">Location</p>
-                  <p className="text-foreground">Indian Institute of Technology Guwahati</p>
+                  <p className="text-foreground">Ghaziabad, Delhi(NCR)</p>
                 </div>
               </div>
             </div>

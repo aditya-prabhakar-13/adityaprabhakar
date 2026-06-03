@@ -119,8 +119,8 @@ export const experiences = [
     period: "2025 - Present",
     description: "Active competitive programmer",
     achievements: [
-      "Codeforces rating: Newbie (1000+)",
-      "Solved 75+ Problems",
+      "Codeforces rating: Newbie (1500+)",
+      "Solved 100+ Problems",
     ],
     technologies: ["C++", "Java", "Algorithms", "Data Structures"]
   }
