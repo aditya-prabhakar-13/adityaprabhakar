@@ -18,8 +18,8 @@ This project is built using modern web technologies:
 The portfolio highlights several key projects:
 *   **Velora:** A corporate mobility optimization engine solving CVRPTW using C++, Django, and React.
 *   **Vogue Nation Portal:** A full-stack event registration platform for Alcheringa 2026 built with Django, SQLite, and Tailwind CSS.
+*   **Virtual Labs:** A real-time, multiplayer physics sandbox built with Next.js, Matter.js, Socket.io, and MongoDB, featuring live mechanical constraints and analytics.
 *   **UDGAM 2026:** The official high-performance website for Northeast India's largest Entrepreneurial Summit.
-*   **YoManas CF Tracker:** A real-time competitive programming dashboard tracking CodeForces statistics and ratings.
 
 ## 🛠️ Getting Started
 

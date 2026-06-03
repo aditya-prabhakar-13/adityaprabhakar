@@ -75,7 +75,37 @@ Route buildInitialRoute(const Customer& seed, const std::vector<Customer>& unrou
   > Ready for connections`
   },
   {
-    id: 3, // You can change this ID to place it where you want in the list
+    id: 3,
+    title: "Virtual Labs | Multiplayer Physics Sandbox",
+    description: "A real-time, multiplayer physics sandbox where users share a room to experiment with rigid-body simulations, mechanical constraints, and live analytics.",
+    longDescription: "Led development of an interactive physics sandbox built on a Peer-Host authority model: the room creator runs the Matter.js engine locally and broadcasts ~20Hz snapshot deltas over Socket.io, while peers interpolate state for smooth, low-latency synchronization. Users spawn bodies and wire them together with ropes, springs, pivots, and motors, toggle an Inspect Mode for real-time velocity and force vectors, and open a Recharts dashboard for live kinetic energy and net-force charts. Experiment setups are serialized and persisted to MongoDB, ready to be reloaded from the Experiment Library.",
+    techStack: ["Next.js", "React", "TypeScript", "Matter.js", "Socket.io", "MongoDB", "Recharts", "Tailwind CSS"],
+    githubUrl: "https://github.com/aditya-prabhakar-13/Virtual_Labs",
+    liveUrl: "https://virtual-labs-y12v.onrender.com/",
+    codeSnippet: `// Peer-Host sync: broadcast physics snapshots at ~20Hz (Socket.io)
+setInterval(() => {
+  if (!isHost) return;
+  const snapshot = world.bodies.map((b) => ({
+    id: b.id,
+    x: b.position.x,
+    y: b.position.y,
+    angle: b.angle,
+  }));
+  socket.emit("state:update", { room, snapshot });
+}, 1000 / 20);
+
+// Peers interpolate toward the host's authoritative state
+socket.on("state:update", ({ snapshot }) => interpolateBodies(snapshot));`,
+    terminalOutput: `$ npm start
+> NODE_ENV=production tsx server.ts
+  ▲ Next.js 16  ready in 1.4s
+  > Socket.io server attached ✓
+  > MongoDB connected (Atlas) ✓
+  > Room "lab-01" created | host elected
+  > Broadcasting physics @ 20Hz to 4 peers`
+  },
+  {
+    id: 4, // You can change this ID to place it where you want in the list
     title: "UDGAM 2026",
     description: "Official website for Northeast India's largest Entrepreneurial Summit at IIT Guwahati.",
     longDescription: "Built and deployed the official platform for Udgam 2026. Features a high-performance responsive design, immersive animations, and optimized asset delivery. Hosted on Vercel with custom domain management via GoDaddy.",
@@ -111,35 +141,6 @@ Route buildInitialRoute(const Customer& seed, const std::vector<Customer>& unrou
 > ✓ Edge functions optimized
 > Deploying to https://www.udgamiitg.com
 > Deployment complete! [1.2s]`
-  },
-  {
-    id: 4,
-    title: "YoManas CF Tracker",
-    description: "A real-time competitive programming dashboard tracking CodeForces statistics, ratings, and contest schedules for elite cohorts.",
-    longDescription: "Developed a robust tracking system that fetches and merges data from multiple CodeForces API endpoints. Features include automated leaderboard generation (recent vs. all-time solves), upcoming contest countdowns, and specialized user profiling with dynamic rating-based styling. Implemented a sophisticated multi-strategy proxy system (Vercel Proxy, CorsProxy, and CodeTabs) to bypass CORS limitations and ensure 99.9% uptime for data fetching.",
-    techStack: ["React", "Vite", "Tailwind CSS", "Lucide React", "CodeForces API", "Vercel"],
-    githubUrl: "https://github.com/aditya-prabhakar-13/YoManasCFTracker",
-    liveUrl: "https://yo-manas-cf-tracker.vercel.app/",
-    codeSnippet: `const fetchCF = async (endpoint, params = {}, retries = 3) => {
-  const strategies = [
-    { name: 'Vercel Proxy', url: () => \`/api/cf/\${endpoint}?\${queryString}\` },
-    { name: 'CorsProxy', url: () => \`https://corsproxy.io/?\${encodeURIComponent(target)}\` }
-  ];
-  // Robust failover logic to ensure data availability
-  for (const strategy of strategies) {
-    try {
-      const response = await fetch(strategy.url());
-      if (response.ok) return (await response.json()).result;
-    } catch (err) { continue; }
-  }
-};`,
-    terminalOutput: `$ npm run dev
-> codeforces-dashboard@0.0.0 dev
-> vite
-  VITE v7.2.4  ready in 124 ms
-  ➜  Local:   http://localhost:5173/
-  > Syncing Leaderboard... OK
-  > CodeForces API Connection: STABLE`
   },
 //   {
 //     id: 4,
